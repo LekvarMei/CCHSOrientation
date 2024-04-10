@@ -17,7 +17,7 @@ const orientationModules = content;
 
 function Home(props) {
   // completedModules is an Array of title the user has passed
-  const { completedModules } = useProgress();
+  const { completedModules, updateCompletedModules } = useProgress();
   // console.log('saved modules are: ',completedModules)
   const [myRecord, setMyRecord] = useState('');
   const client = generateClient();
@@ -63,7 +63,8 @@ function Home(props) {
 
     } else {
       setMyRecord(apiData.data.listProgresses.items[0].id)
-      console.log('my progress is',apiData.data.listProgresses.items[0].progress)
+      // console.log('my progress is',typeof(apiData.data.listProgresses.items[0].progress))
+      updateCompletedModules(JSON.parse(apiData.data.listProgresses.items[0].progress))
     }
     } catch (error) {
       console.log(error)
@@ -117,19 +118,13 @@ function Home(props) {
                     <div className="secondaryContent">
                       {module.estimationTime}
                     </div>
-
-                    {completedModules.includes(module.title) && (
-                      <div className="status-card content">
-                        <CheckCircleFilled style={{ color: "#299E63" }} />
-                        Completed
-                      </div>
-                    )}
-                    {!completedModules.includes(module.title) && (
-                      <div className="status-card content">
-                        <MinusCircleFilled style={{ color: "#C51C00" }} />
-                        Incomplete
-                      </div>
-                    )}
+                    
+                    <div className="status-card content">
+                        {completedModules.includes(module.title) ? <><CheckCircleFilled style={{ color: "#299E63" }} />
+                        Completed</> : 
+                        <><MinusCircleFilled style={{ color: "#C51C00" }} />
+                        Incomplete</>}
+                    </div>
                   </div>
                 </Card>
               </Col>

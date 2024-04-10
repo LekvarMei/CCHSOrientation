@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "testAuthIdentityPool",
+    "identityPoolName": "reactamp8d944d16_identitypool_8d944d16",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "cchsor932dde83",
-    "userPoolName": "CCHSOrientation",
+    "resourceNameTruncated": "reacta8d944d16",
+    "userPoolName": "reactamp8d944d16_userpool_8d944d16",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -14,40 +14,47 @@
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Verification code: {####}",
-    "emailVerificationMessage": "Verification code: {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
-    "passwordPolicyCharacters": [
-      "Requires Lowercase",
-      "Requires Numbers",
-      "Requires Symbols",
-      "Requires Uppercase"
-    ],
+    "passwordPolicyCharacters": [],
     "requiredAttributes": [
-      "name"
+      "email"
     ],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "CCHSOr932dde83_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "reacta8d944d16_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "932dde83",
-    "resourceName": "CCHSOrientation",
+    "sharedId": "8d944d16",
+    "resourceName": "reactamp8d944d16",
     "authSelections": "identityPoolAndUserPool",
-    "serviceName": "Cognito",
-    "usernameAttributes": [
-      "email"
-    ],
     "useDefault": "manual",
-    "userPoolGroups": false,
     "userPoolGroupList": [],
+    "serviceName": "Cognito",
+    "usernameCaseSensitive": false,
+    "useEnabledMfas": true,
+    "authRoleArn": {
+      "Fn::GetAtt": [
+        "AuthRole",
+        "Arn"
+      ]
+    },
+    "unauthRoleArn": {
+      "Fn::GetAtt": [
+        "UnauthRole",
+        "Arn"
+      ]
+    },
+    "breakCircularDependency": true,
+    "dependsOn": [],
+    "userPoolGroups": false,
     "adminQueries": false,
     "thirdPartyAuth": false,
     "authProviders": [],
-    "usernameCaseSensitive": false,
-    "useEnabledMfas": true
+    "hostedUI": false
   }
 }

@@ -200,7 +200,8 @@ $primaryColor: #9e2a2b;
 
 .infoIconStyle {
   color: #9e2a2b;
-  font-size: 24px;
+  font-size: 20px;
+  padding-top: 4px;
   /* other styles */
 }
 
@@ -326,6 +327,15 @@ $primaryColor: #9e2a2b;
   padding-right: 10px;
 }
 
+.congratsTitle{
+  font-weight:600;
+  font-size:'16px'
+}
+
+.congratsContent{
+  font-size:'16px'
+}
+
 @media (max-width: 500px) {
   .headerMenu {
     display: none;
@@ -346,6 +356,7 @@ $primaryColor: #9e2a2b;
   .header1 {
     font-size: 32px;
   }
+
   .header3 {
     font-size: 20px;
   }
@@ -353,7 +364,7 @@ $primaryColor: #9e2a2b;
     font-size: 16px;
   }
   .content {
-    font-size: 20px;
+    font-size: 16px;
   }
   .secondaryContent {
     font-size: 20px;
@@ -379,7 +390,7 @@ $primaryColor: #9e2a2b;
   .recapCardContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
   }
   .rightArrowStyle {
     display: none;
@@ -399,7 +410,7 @@ $primaryColor: #9e2a2b;
     flex-direction: column;
     align-items: center;
     height: 200px;
-    width: 350px;
+    width: 360px;
   }
   .recapCardDisplay .infoIconStyle,
   .recapCardDisplay .content,
@@ -407,22 +418,17 @@ $primaryColor: #9e2a2b;
   .recapCardDisplay .rightArrowStyle {
     margin-bottom: 20px; /* Adjust this value to increase or decrease the space between items */
   }
-
-  .site-collapse-custom-panel {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
   
-  .site-collapse-custom-panel > .ant-collapse-header {
-    font-size: 20px;
-  }
-  
-  .site-collapse-custom-panel .ant-collapse-content-box {
-    font-size: 20px;
-  }
-
   .profile-input {
     font-size: 18px;
+  }
+
+  .congratsTitle{
+    font-size: 20px
+  }
+  
+  .congratsContent{
+    font-size: 20px
   }
   
 }
